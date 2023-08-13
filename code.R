@@ -9,7 +9,6 @@ selected_data<- data |>
   filter(country == "Japan", year %in% c(1850 : 2015))
 #横軸GDP/capita 縦軸CO2/capitaの折れ線プロット
 ggplot(
-  data = selected_data, aes(x=gdp_per_capita, y=co2_per_capita))+
-  geom_line()+
-  geom_point()
-  
+  data = selected_data, aes(x=log10(gdp_per_capita), y=co2_per_capita))+
+  geom_line() +
+  geom_point() 
